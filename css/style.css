@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-areas: 
+    "coolheader coolheader"
+    "searchbar searchbar"
+    "maincontent sidebar"
+    "maincontent advertisement"
+    "coolfooter coolfooter";
+}
+
+header {
+  grid-area: coolheader;
+  display: flex;
+  justify-content: space-between;
+  background-color: yellow;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.google-ad {
+  grid-area: advertisement;
+}
+
+.search {
+  grid-area: searchbar;
+}
+
+menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  grid-area: maincontent;
+}
+
+.boxes {
+  width: 100%;
+  height: 300px;
+  max-width: 500px;
+  background-color: #ddd;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box {
+  /* flex-grow: 1; /* consumes all remaining space, divides if others also allowed to grow */
+  /* flex-shrink: 1; /* 1 = allow the element to shrink, 0 = no shink */
+  /* flex-basis: 70px; default width of the element */
+  flex: 1 0 70px; /* grow, shrink, basis */
+  height: 70px;
+}
+
+.box-1 {
+  background-color: red;
+}
+
+.box-2 {
+  flex-grow: 1;
+  background-color: green;
+}
+
+.box-3 {
+  background-color: blue;
+}
+
+.box-4 {
+  background-color: orange;
+}
+
+p {
+  background-color: pink;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: 50px 20px;
+  grid-auto-rows: 50px;
+  grid-auto-flow: row;
+  gap: 10px;
+  background-color: cyan;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+}
+
+.cell {
+  background-color: #999;
+  border: 1px solid black;
+}
+
+.cell-1 {
+  grid-column: 1 / 3;
+}
+
+.cell-6 {
+  grid-row: span 2;
+}
+
+.cell-7 {
+  grid-column: span 2;
+}
+
+.cell-8 {
+  grid-column: span 2;
+}
+
+.recipe-list {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 100px;
+}
+
+aside {
+  grid-area: sidebar;
+  background-color: purple;
+  color: white;
+}
+
+footer {
+  grid-area: coolfooter; /* this will occupy coolfooter (2 cols)*/
+}
